@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr. Mendez — Math Teacher | PSUSD</title>
+  <meta name="description" content="Mr. Mendez's classroom hub — math resources, class info, and student support." />
+
+  <!-- Fonts: Syne (display) + IBM Plex Sans (body) + IBM Plex Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+    NAVIGATION
+    To show/hide the Portfolio tab: toggle class "portfolio-mode" on <body>
+    You can do this in script.js or manually when applying for jobs
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Mr.<span>Mendez</span></a>
+      <ul class="nav-links">
+        <li><a href="#students">For Students</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- This link only appears when body has class "portfolio-mode" -->
+        <li class="nav-portfolio"><a href="#portfolio">Portfolio</a></li>
+      </ul>
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeMenu" aria-label="Close menu">✕</button>
+    <a href="#students" class="mobile-link">For Students</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#portfolio" class="mobile-link nav-portfolio">Portfolio</a>
+  </div>
+
+
+  <!-- ============================================================
+    HERO SECTION
+    Edit: hero-title, hero-subtitle, and the two button links
+  ============================================================ -->
+  <section id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-tag">Math Teacher · Palm Springs Unified · CS Authorized</div>
+
+        <h1 class="hero-title">
+          Math doesn't have to be
+          <span class="line-accent">the enemy.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I teach math because it's one of the most hated subjects in the world —
+          and it doesn't have to be. The logic is already in you. We just have to find it together.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#students" class="btn btn-primary">I'm a Student →</a>
+          <a href="#about" class="btn btn-secondary">About Mr. Mendez</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    STUDENTS SECTION
+    Edit: announcement text, resource cards
+    Add/remove resource cards as needed — they use class="card fade-in"
+  ============================================================ -->
+  <section id="students">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// for students</span>
+        <h2>Your class hub.</h2>
+        <p>Everything you need — resources, links, and ways to get help. Bookmark this page.</p>
+      </div>
+
+      <!-- Announcement bar — update this for current class info -->
+      <div class="announcement">
+        <span class="announcement-badge">Live Now</span>
+        <p>Summer School 2025 — Check here for daily resources, assignments, and links. More coming soon.</p>
+      </div>
+
+      <!-- Resource cards — add as many as you need -->
+      <div class="grid-3">
+
+        <div class="card fade-in">
+          <span class="card-icon">📐</span>
+          <h3>Class Notes & Resources</h3>
+          <p>Handouts, notes, and reference sheets for everything we cover in class. Updated regularly.</p>
+          <!-- Replace # with actual link when ready -->
+          <br /><a href="#" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Coming Soon</a>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">🎥</span>
+          <h3>Video Help</h3>
+          <p>Stuck on a problem? Watch a walkthrough. New videos added for each unit we cover.</p>
+          <br /><a href="#" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Coming Soon</a>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">🧮</span>
+          <h3>Desmos Calculator</h3>
+          <p>The graphing calculator we use in class. Free, no account needed. Use it for homework.</p>
+          <br /><a href="https://www.desmos.com" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Open Desmos ↗</a>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">🤝</span>
+          <h3>Get Help</h3>
+          <p>Office hours, tutoring info, and how to reach me if you're stuck. Don't wait until the test.</p>
+          <br /><a href="#contact" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Contact Me</a>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">📅</span>
+          <h3>Class Calendar</h3>
+          <p>Test dates, project deadlines, and important class events. Stay ahead of the curve.</p>
+          <br /><a href="#" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Coming Soon</a>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">💡</span>
+          <h3>Khan Academy</h3>
+          <p>Free practice on any topic. Great for catching up or getting ahead. Seriously — it works.</p>
+          <br /><a href="https://www.khanacademy.org" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: 12px; padding: 10px 20px; font-size: 0.875rem;">Open Khan ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    ABOUT SECTION
+    Edit: the lead paragraph and the body paragraphs below it
+    Add a real photo by replacing the placeholder div with an <img> tag
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <!-- Photo column -->
+        <div class="about-photo fade-in">
+          <!-- 
+            TO ADD YOUR PHOTO: 
+            Replace the div below with:
+            <img src="assets/mendez.jpg" alt="Mr. Mendez" style="width:100%; border-radius: 12px;" />
+          -->
+          <div class="about-photo-placeholder">
+            <span class="big-icon">👨‍🏫</span>
+            <span>// photo coming soon</span>
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about-text fade-in">
+          <span class="section-tag">// about mr. mendez</span>
+          <h2>Math teacher. Problem solver. Real one.</h2>
+          <div class="divider"></div>
+
+          <p class="lead">
+            I teach math because it's one of the most hated subjects in the world —
+            and it isn't as complicated as everyone makes it seem.
+            The problem isn't the math. It's the story people tell themselves about it.
+          </p>
+
+          <p>
+            I've spent over 8 years in high school math classrooms at Palm Springs Unified,
+            and before that another 4 years as a district-level Instructional Technology specialist
+            helping teachers use technology more effectively. That background shapes how I teach —
+            I build lessons that connect, use tools that actually help, and create
+            an environment where it's okay not to know yet.
+          </p>
+
+          <p>
+            The win I chase isn't a test score. It's the moment when a student who's been
+            telling themselves they "just can't do math" starts asking better questions.
+            That shift in thinking — that's the whole point.
+          </p>
+
+          <p>
+            My classroom is chill. You'll see pieces of what I'm into — music, video game soundtracks,
+            anime, games. But don't mistake the vibe for a lack of direction. We show up, we work,
+            and we figure it out together.
+          </p>
+
+          <!-- 
+            VIBE TAGS — add or remove any of these 
+            to reflect what makes your classroom yours
+          -->
+          <div class="vibe-tags">
+            <span class="tag accent">Integrated Math</span>
+            <span class="tag accent">Consumer Math</span>
+            <span class="tag accent">CS Authorized</span>
+            <span class="tag">🎮 VGM</span>
+            <span class="tag">🎵 Music</span>
+            <span class="tag">🎌 Anime</span>
+            <span class="tag">📐 Logical Thinker</span>
+            <span class="tag">PSUSD · 8 years</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    CONTACT SECTION
+    Edit: email address, any other contact info
+  ============================================================ -->
+  <section id="contact" style="padding: 80px 0;">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin: 0 auto 40px;">
+        <span class="section-tag" style="display: block; text-align: center;">// reach out</span>
+        <h2>Get in touch.</h2>
+        <p style="margin: 0 auto;">Students, parents, or colleagues — reach out any time.</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <!-- Replace with your actual school email -->
+        <a href="mailto:mmendez@psusd.us" class="btn btn-primary">📧 Email Mr. Mendez</a>
+        <a href="https://linkedin.com/in/mario-mendez" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    PORTFOLIO SECTION
+    This section is HIDDEN by default.
+    To show it: add class "portfolio-mode" to the <body> tag
+    Or use the toggle in script.js (see PORTFOLIO MODE section)
+    
+    Only activate this section during job application season.
+  ============================================================ -->
+  <section id="portfolio">
+    <div class="container">
+
+      <div class="portfolio-banner">
+        // This section is visible during active job applications only.
+        It documents professional work, skills, and classroom artifacts.
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">// professional portfolio</span>
+        <h2>Work that speaks for itself.</h2>
+        <p>8 years of classroom experience, 4 years as a district-level technology specialist, and a track record of building things that actually work.</p>
+      </div>
+
+      <div class="grid-2">
+
+        <div class="card fade-in">
+          <span class="card-icon">🏫</span>
+          <h3>Classroom Experience</h3>
+          <p>
+            Integrated Math 1, 2 &amp; 3 — Consumer Math — Credit Recovery via Edgenuity.
+            8 years at Palm Springs Unified School District. CS Authorized.
+          </p>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">💻</span>
+          <h3>Instructional Technology TOSA</h3>
+          <p>
+            4 years supporting 250+ educators across PSUSD in AI integration,
+            professional development, esports, and robotics program management.
+          </p>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">🤖</span>
+          <h3>AI Integration in Education</h3>
+          <p>
+            Designed and delivered district-wide professional development on AI tools,
+            including workflow integration, prompt design, and responsible use.
+          </p>
+        </div>
+
+        <div class="card fade-in">
+          <span class="card-icon">📊</span>
+          <h3>Lesson Artifacts</h3>
+          <p>
+            AI-enhanced lesson plans, student resources, and instructional tools
+            built for the modern math classroom. More added soon.
+          </p>
+          <!-- Add links to actual artifacts when ready -->
+        </div>
+
+      </div>
+
+      <!-- Education credentials -->
+      <div style="margin-top: 48px;">
+        <h3 style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-secondary); font-family: var(--font-mono);">// credentials</h3>
+        <div class="grid-2">
+          <div class="card fade-in" style="padding: 20px 24px;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 4px;">M.S. Information Technology</p>
+            <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 2px; max-width: none;">University of Redlands</p>
+          </div>
+          <div class="card fade-in" style="padding: 20px 24px;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 4px;">B.A. Mathematics</p>
+            <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 2px; max-width: none;">UC Riverside</p>
+          </div>
+          <div class="card fade-in" style="padding: 20px 24px;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 4px;">Single Subject Credential — Mathematics</p>
+            <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 2px; max-width: none;">Brandman University</p>
+          </div>
+          <div class="card fade-in" style="padding: 20px 24px;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 4px;">CS Authorization</p>
+            <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 2px; max-width: none;">Cal Poly Pomona</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Mr.<span>Mendez</span></div>
+        <ul class="footer-links">
+          <li><a href="#students">For Students</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="footer-copy">// built with intention · PSUSD · 2025</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
