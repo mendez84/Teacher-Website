@@ -1,125 +1,53 @@
 /* ============================================================
    MR. MENDEZ — script.js
-   
-   This file handles:
-   1. Nav scroll behavior
-   2. Mobile menu
-   3. Fade-in animations on scroll
-   4. Portfolio mode toggle
-   
-   Everything is plain JS — no libraries needed.
+   Handles: nav scroll, mobile menu, fade-in, portfolio toggle
+   No libraries. Edit freely.
 ============================================================ */
 
-
-// ============================================================
-// 1. NAV — adds "scrolled" class when user scrolls down
-//    This triggers the frosted glass effect in CSS
-// ============================================================
-const navbar = document.getElementById('navbar');
-
+// ── NAV SCROLL ──────────────────────────────────────────────
+const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  nav?.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── MOBILE MENU ─────────────────────────────────────────────
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobileMenu');
+const mobileClose = document.getElementById('mobileClose');
+
+hamburger?.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+
+mobileClose?.addEventListener('click', closeMobile);
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobile));
+
+function closeMobile() {
+  mobileMenu?.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── FADE IN ON SCROLL ────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+// ── ACTIVE NAV LINK (highlight current page) ─────────────────
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a, .mobile-link').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    link.classList.add('active');
   }
 });
 
-
-// ============================================================
-// 2. MOBILE MENU — hamburger open/close
-// ============================================================
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMenu  = document.getElementById('closeMenu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.add('open');
-  document.body.style.overflow = 'hidden'; // prevent scroll when menu is open
-});
-
-closeMenu.addEventListener('click', () => {
-  mobileMenu.classList.remove('open');
-  document.body.style.overflow = '';
-});
-
-// Close menu when any link is tapped
-mobileLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-});
-
-
-// ============================================================
-// 3. FADE-IN ANIMATIONS — elements with class "fade-in"
-//    animate into view as the user scrolls down
-// ============================================================
-const fadeEls = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // only animate once
-    }
-  });
-}, {
-  threshold: 0.1,       // trigger when 10% of element is visible
-  rootMargin: '0px 0px -40px 0px' // slight offset so it triggers before fully in view
-});
-
-fadeEls.forEach(el => observer.observe(el));
-
-
-// ============================================================
-// 4. PORTFOLIO MODE TOGGLE
-//
-//    The portfolio section is hidden by default.
-//    To show it during job application season, either:
-//
-//    OPTION A — Add class manually:
-//      Open index.html and change <body> to <body class="portfolio-mode">
-//
-//    OPTION B — Uncomment the line below to turn it on via JS:
-//      document.body.classList.add('portfolio-mode');
-//
-//    OPTION C — Use a URL parameter: ?portfolio=true
-//      Visit yourdomain.com?portfolio=true to preview
-//      This way the page stays clean for students by default
-// ============================================================
-
-// URL parameter check — add ?portfolio=true to the URL to activate
+// ── PORTFOLIO MODE ───────────────────────────────────────────
+// Add ?portfolio=true to the URL to unlock the portfolio section and nav link
+// OR add class="portfolio-mode" to <body> to always show it
 const params = new URLSearchParams(window.location.search);
 if (params.get('portfolio') === 'true') {
   document.body.classList.add('portfolio-mode');
 }
-
-// Uncomment this line to force portfolio mode on for everyone:
-// document.body.classList.add('portfolio-mode');
-
-
-// ============================================================
-// 5. ACTIVE NAV LINK — highlights current section in nav
-// ============================================================
-const sections = document.querySelectorAll('section[id]');
-const navLinkEls = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-  let currentSection = '';
-  sections.forEach(section => {
-    const top = section.offsetTop - 120;
-    if (window.scrollY >= top) {
-      currentSection = section.getAttribute('id');
-    }
-  });
-
-  navLinkEls.forEach(link => {
-    link.style.color = '';
-    if (link.getAttribute('href') === `#${currentSection}`) {
-      link.style.color = 'var(--accent-light)';
-    }
-  });
-});
