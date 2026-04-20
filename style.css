@@ -4,8 +4,11 @@
 
    TO CUSTOMIZE:
    Change --accent below to update the color across the whole site.
+   Light/dark mode: toggled via data-theme attribute on <html>.
+   Follows system preference by default.
 ============================================================ */
 
+/* ── DARK MODE (default) ── */
 :root {
   --bg:           #090d18;
   --bg-2:         #0f1526;
@@ -19,13 +22,75 @@
   --text-2:       #7e90b0;
   --text-3:       #3a4d6a;
   --border:       #192035;
-  --radius:       10px;
-  --radius-sm:    6px;
-  --font-head:    'Syne', sans-serif;
-  --font-body:    'IBM Plex Sans', sans-serif;
-  --font-mono:    'IBM Plex Mono', monospace;
-  --nav-h:        62px;
-  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --nav-bg:       rgba(9,13,24,0.94);
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── LIGHT MODE — system preference ── */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:           #f5f7fc;
+    --bg-2:         #edf1f9;
+    --bg-card:      #ffffff;
+    --accent:       #1d6cc8;
+    --accent-dim:   rgba(29,108,200,0.08);
+    --accent-line:  rgba(29,108,200,0.22);
+    --warm:         #d97706;
+    --green:        #16a34a;
+    --text:         #0f1a2e;
+    --text-2:       #3d5275;
+    --text-3:       #8fa3c0;
+    --border:       #d9e3f0;
+    --nav-bg:       rgba(245,247,252,0.94);
+    --shadow:       0 4px 24px rgba(0,0,0,0.1);
+  }
+}
+
+/* ── LIGHT MODE — manual override ── */
+[data-theme="light"] {
+  --bg:           #f5f7fc;
+  --bg-2:         #edf1f9;
+  --bg-card:      #ffffff;
+  --accent:       #1d6cc8;
+  --accent-dim:   rgba(29,108,200,0.08);
+  --accent-line:  rgba(29,108,200,0.22);
+  --warm:         #d97706;
+  --green:        #16a34a;
+  --text:         #0f1a2e;
+  --text-2:       #3d5275;
+  --text-3:       #8fa3c0;
+  --border:       #d9e3f0;
+  --nav-bg:       rgba(245,247,252,0.94);
+  --shadow:       0 4px 24px rgba(0,0,0,0.1);
+}
+
+/* ── DARK MODE — manual override ── */
+[data-theme="dark"] {
+  --bg:           #090d18;
+  --bg-2:         #0f1526;
+  --bg-card:      #131929;
+  --accent:       #2979d9;
+  --accent-dim:   rgba(41,121,217,0.13);
+  --accent-line:  rgba(41,121,217,0.3);
+  --warm:         #f5a424;
+  --green:        #22c55e;
+  --text:         #dde4f0;
+  --text-2:       #7e90b0;
+  --text-3:       #3a4d6a;
+  --border:       #192035;
+  --nav-bg:       rgba(9,13,24,0.94);
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── SHARED NON-COLOR TOKENS ── */
+:root {
+  --radius:    10px;
+  --radius-sm: 6px;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --nav-h:     62px;
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── RESET ── */
@@ -39,6 +104,7 @@ body {
   background-image: radial-gradient(circle, #19203530 1px, transparent 1px);
   background-size: 26px 26px;
   min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 img { max-width: 100%; display: block; }
 a { color: var(--accent); text-decoration: none; }
@@ -69,7 +135,7 @@ nav {
   border-bottom: 1px solid transparent;
 }
 nav.scrolled {
-  background: rgba(9,13,24,0.94);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-color: var(--border);
@@ -91,6 +157,48 @@ nav.scrolled {
 }
 .nav-links a:hover { color: var(--text); background: var(--bg-2); }
 .nav-links a.active { color: var(--accent); background: var(--accent-dim); }
+
+/* Nav right — groups theme toggle and hamburger */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── THEME TOGGLE BUTTON ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-dim);
+}
+
+/* Show sun in dark mode (click to go light), moon in light mode (click to go dark) */
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+
+[data-theme="light"] .icon-sun,
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .icon-sun { display: none; } }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* Handle icon visibility properly */
+html.is-light .icon-sun  { display: none; }
+html.is-light .icon-moon { display: block; }
+html.is-dark  .icon-sun  { display: block; }
+html.is-dark  .icon-moon { display: none; }
 
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
