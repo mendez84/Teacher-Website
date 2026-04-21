@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr. Mendez Math</title>
+  <meta name="description" content="Mr. Mendez's math class hub — schedule, Google Classroom codes, resources, and contact info." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
 /* ============================================================
    MR. MENDEZ MATH — style.css
    Shared styles for all pages.
@@ -397,3 +408,352 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; margin-top: 48px;
   .day-label { font-size: 0.7rem; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mr.<span>Mendez</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="consumer-math.html">Consumer Math</a></li>
+      <li><a href="integrated-math.html">Integrated Math</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ──────────────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="consumer-math.html" class="mobile-link">Consumer Math</a>
+  <a href="integrated-math.html" class="mobile-link">Integrated Math</a>
+  <a href="resources.html" class="mobile-link">Resources</a>
+  <a href="about.html" class="mobile-link">About</a>
+  <a href="contact.html" class="mobile-link">Contact</a>
+  <a href="portfolio.html" class="mobile-link">Portfolio</a>
+</div>
+
+
+<!-- ── MAIN ─────────────────────────────────────────────────── -->
+<main class="page-body">
+  <div class="wrap">
+
+    <!-- Welcome block -->
+    <div class="welcome-block fade">
+      <h1>Welcome, Students &amp; Parents!</h1>
+      <p>
+        This site is your class resource hub. You'll find your schedule, Google Classroom codes,
+        assignment pages, and anything else you need throughout the school year.
+        If you have questions or concerns, don't hesitate to reach out.
+        &mdash; Mr. Mendez
+      </p>
+    </div>
+
+    <!-- ── SCHEDULE + GC CODES ─────────────────────────────── -->
+    <!--
+      UPDATE EACH SEMESTER:
+      Edit the rows below with your current periods, courses, and GC codes.
+    -->
+    <div class="info-row fade">
+
+      <!-- Class Schedule -->
+      <div class="info-card">
+        <div class="info-card-head">
+          <span class="info-icon">📅</span>
+          <h2>Class Schedule</h2>
+        </div>
+        <table class="info-table">
+          <thead>
+            <tr><th>Period</th><th>Course</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Period 1</td>
+              <td><a href="consumer-math.html">Consumer Math</a></td>
+            </tr>
+            <tr>
+              <td>Period 2</td>
+              <td><a href="integrated-math.html">Integrated Math 1</a></td>
+            </tr>
+            <tr>
+              <td>Period 3</td>
+              <td><a href="integrated-math.html">Integrated Math 2</a></td>
+            </tr>
+            <tr>
+              <td>Period 4</td>
+              <td><a href="integrated-math.html">Integrated Math 1</a></td>
+            </tr>
+            <tr>
+              <td>Period 5</td>
+              <td>Prep / Conference</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Google Classroom Codes -->
+      <div class="info-card">
+        <div class="info-card-head">
+          <span class="info-icon">🎓</span>
+          <h2>Google Classroom Codes</h2>
+        </div>
+        <table class="info-table">
+          <thead>
+            <tr><th>Period</th><th>Code</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Period 1</td>
+              <td><span class="gc-code">mx4kp9a</span></td>
+            </tr>
+            <tr>
+              <td>Period 2</td>
+              <td><span class="gc-code">zt8qnr2</span></td>
+            </tr>
+            <tr>
+              <td>Period 3</td>
+              <td><span class="gc-code">bw6jfd5</span></td>
+            </tr>
+            <tr>
+              <td>Period 4</td>
+              <td><span class="gc-code">hy3vmc7</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="gc-note">
+          Go to <a href="https://classroom.google.com" target="_blank" rel="noopener">classroom.google.com</a>
+          and enter the code for your period to join.
+        </p>
+      </div>
+
+    </div><!-- /info-row -->
+
+
+    <!-- ── QUICK LINKS ──────────────────────────────────────── -->
+    <div class="section-divider fade">
+      <span class="sec-label">// quick links</span>
+    </div>
+
+    <div class="quick-grid fade">
+      <a href="consumer-math.html" class="quick-card">
+        <span class="quick-icon">💳</span>
+        <div class="quick-text">
+          <strong>Consumer Math</strong>
+          <span>Weekly assignments</span>
+        </div>
+        <span class="quick-arrow">→</span>
+      </a>
+      <a href="integrated-math.html" class="quick-card">
+        <span class="quick-icon">📐</span>
+        <div class="quick-text">
+          <strong>Integrated Math</strong>
+          <span>Weekly assignments</span>
+        </div>
+        <span class="quick-arrow">→</span>
+      </a>
+      <a href="resources.html" class="quick-card">
+        <span class="quick-icon">🎥</span>
+        <div class="quick-text">
+          <strong>Resources</strong>
+          <span>Videos &amp; study tools</span>
+        </div>
+        <span class="quick-arrow">→</span>
+      </a>
+      <a href="https://www.desmos.com" target="_blank" rel="noopener" class="quick-card">
+        <span class="quick-icon">📊</span>
+        <div class="quick-text">
+          <strong>Desmos</strong>
+          <span>Graphing calculator</span>
+        </div>
+        <span class="quick-arrow">↗</span>
+      </a>
+      <a href="https://classroom.google.com" target="_blank" rel="noopener" class="quick-card">
+        <span class="quick-icon">🏫</span>
+        <div class="quick-text">
+          <strong>Google Classroom</strong>
+          <span>Submit your work</span>
+        </div>
+        <span class="quick-arrow">↗</span>
+      </a>
+      <a href="https://www.khanacademy.org" target="_blank" rel="noopener" class="quick-card">
+        <span class="quick-icon">💡</span>
+        <div class="quick-text">
+          <strong>Khan Academy</strong>
+          <span>Free practice &amp; help</span>
+        </div>
+        <span class="quick-arrow">↗</span>
+      </a>
+    </div><!-- /quick-grid -->
+
+
+    <!-- ── CONTACT FOOTER BAR ───────────────────────────────── -->
+    <!--
+      UPDATE: Replace the email and room number with your actual info.
+    -->
+    <div class="contact-bar fade">
+      <div class="contact-item">
+        <span class="contact-label">// email</span>
+        <a href="mailto:mmendez1@psusd.us">mmendez1@psusd.us</a>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-item">
+        <span class="contact-label">// room</span>
+        <span>Room 214</span>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-item">
+        <span class="contact-label">// office hours</span>
+        <span>Tue &amp; Thu · 7:00 – 7:30 AM</span>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-item">
+        <span class="contact-label">// school</span>
+        <span>Palm Springs Unified School District</span>
+      </div>
+    </div>
+
+  </div><!-- /wrap -->
+</main>
+
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">Mr.<span>Mendez</span> Math</div>
+      <ul class="footer-links">
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">// PSUSD · 2025</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   MR. MENDEZ MATH — script.js
+   Handles: theme toggle, nav scroll, mobile menu, fade-in
+   No libraries. Edit freely.
+============================================================ */
+
+
+// ── THEME TOGGLE ─────────────────────────────────────────────
+// Default: follows system (prefers-color-scheme)
+// Manual toggle saves to localStorage and overrides system.
+
+const html = document.documentElement;
+
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  html.classList.toggle('is-light', theme === 'light');
+  html.classList.toggle('is-dark',  theme === 'dark');
+}
+
+// Run immediately to prevent flash of wrong theme
+(function initTheme() {
+  const saved = localStorage.getItem('mendez-theme');
+  applyTheme(saved || getSystemTheme());
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('themeToggle');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') || getSystemTheme();
+      const next    = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('mendez-theme', next);
+    });
+  }
+
+  // If OS theme changes and user hasn't set a manual preference, follow it
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('mendez-theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+});
+
+
+// ── NAV SCROLL ──────────────────────────────────────────────
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav?.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+
+// ── MOBILE MENU ─────────────────────────────────────────────
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobileMenu');
+const mobileClose = document.getElementById('mobileClose');
+
+hamburger?.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+
+mobileClose?.addEventListener('click', closeMobile);
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobile));
+
+function closeMobile() {
+  mobileMenu?.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+
+// ── FADE IN ON SCROLL ────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+
+// ── ACTIVE NAV LINK ──────────────────────────────────────────
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a, .mobile-link').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    link.classList.add('active');
+  }
+});
+
+
+// ── PORTFOLIO MODE ───────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+if (params.get('portfolio') === 'true') {
+  document.body.classList.add('portfolio-mode');
+}
+
+</script>
+</body>
+</html>
