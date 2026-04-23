@@ -397,3 +397,53 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; margin-top: 48px;
   .day-label { font-size: 0.7rem; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
+
+/* ── BACK TO TOP BUTTON ── */
+#backToTop {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 150;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(41,121,217,0.35);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+}
+#backToTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#backToTop:hover { background: var(--link-hover); }
+#backToTop:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ── FOCUS STYLES (keyboard accessibility) ── */
+a:focus-visible,
+button:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── EXP-HEADER cursor for keyboard users ── */
+.exp-header { cursor: pointer; }
+.exp-header:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
