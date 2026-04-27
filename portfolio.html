@@ -414,6 +414,78 @@
     }
 
     /* Print styles */
+
+    /* ── PD DELIVERED SECTION ── */
+    .pd-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .pd-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .pd-card:hover { border-color: var(--accent-line); transform: translateY(-2px); }
+    .pd-school {
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pd-school-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid var(--accent-line);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .pd-school-tag.hs { background: var(--accent-dim); color: var(--accent); border-color: var(--accent-line); }
+    .pd-school-tag.ms { background: rgba(34,197,94,0.1); color: var(--green); border-color: var(--green-border); }
+    .pd-school-tag.dist { background: rgba(245,164,36,0.08); color: var(--warm); border-color: var(--warm-border); }
+    .pd-sessions { display: flex; flex-direction: column; gap: 4px; }
+    .pd-session {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-2);
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pd-session:last-child { border-bottom: none; }
+    .pd-session-name { flex: 1; }
+    .pd-session-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-3); white-space: nowrap; }
+    .pd-stat-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .pd-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+    .pd-stat-num { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--accent); display: block; }
+    .pd-stat-lbl { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; }
+
     @media print {
       nav, footer, .port-links, .port-tabs, .print-btn, .theme-toggle { display: none !important; }
       .page-body { padding-top: 0 !important; }
@@ -525,6 +597,7 @@
       <button class="tab-btn active" data-tab="experience">Experience</button>
       <button class="tab-btn" data-tab="skills">Skills</button>
       <button class="tab-btn" data-tab="education">Education</button>
+      <button class="tab-btn" data-tab="pd">PD Delivered</button>
     </div>
 
     <!-- EXPERIENCE TAB -->
@@ -644,7 +717,7 @@
           <span class="skill-pill hi">Credit Recovery</span>
           <span class="skill-pill hi">Computer Science (CS Auth)</span>
           <span class="skill-pill">Curriculum Development</span>
-          <span class="skill-pill">Differentiated Instruction</span>
+          <span class="skill-pill hi">Differentiated Instruction</span>
           <span class="skill-pill">Classroom Management</span>
           <span class="skill-pill">Student Intervention</span>
         </div>
@@ -656,9 +729,12 @@
           <span class="skill-pill hi">AI Integration in Education</span>
           <span class="skill-pill hi">Professional Development Design</span>
           <span class="skill-pill">Google Workspace for Education</span>
-          <span class="skill-pill">Google Classroom</span>
+          <span class="skill-pill hi">Google Classroom</span>
           <span class="skill-pill">Edgenuity</span>
           <span class="skill-pill">Desmos</span>
+          <span class="skill-pill hi">MagicSchool.ai / NotebookLM</span>
+          <span class="skill-pill hi">Synergy Gradebook</span>
+          <span class="skill-pill hi">ParentSquare</span>
           <span class="skill-pill">ChatGPT / Gemini / Claude</span>
           <span class="skill-pill">Instructional Video Production</span>
         </div>
@@ -681,8 +757,6 @@
           <span class="skill-pill">HTML / CSS / JavaScript</span>
           <span class="skill-pill">Web Development</span>
           <span class="skill-pill">GitHub / GitHub Pages</span>
-          <span class="skill-pill">Logic Pro (Music Production)</span>
-          <span class="skill-pill">macOS / Windows / Linux</span>
         </div>
       </div>
 
@@ -715,6 +789,186 @@
     </div><!-- /tab-education -->
 
     <!-- Teaching Philosophy (always visible) -->
+
+    <!-- PD DELIVERED TAB -->
+    <div class="tab-panel" id="tab-pd">
+
+      <!-- Summary stats -->
+      <div class="pd-stat-row fade">
+        <div class="pd-stat">
+          <span class="pd-stat-num">10</span>
+          <span class="pd-stat-lbl">School Sites</span>
+        </div>
+        <div class="pd-stat">
+          <span class="pd-stat-num">12</span>
+          <span class="pd-stat-lbl">PD Sessions</span>
+        </div>
+        <div class="pd-stat">
+          <span class="pd-stat-num">8</span>
+          <span class="pd-stat-lbl">Tools Taught</span>
+        </div>
+        <div class="pd-stat">
+          <span class="pd-stat-num">250+</span>
+          <span class="pd-stat-lbl">Educators Reached</span>
+        </div>
+      </div>
+
+      <div class="pd-grid">
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Cathedral City High School
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">AI for Teachers</span>
+              <span class="pd-session-date">Jan 2025</span>
+            </div>
+            <div class="pd-session">
+              <span class="pd-session-name">ParentSquare</span>
+              <span class="pd-session-date">Jan 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Rancho Mirage High School
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">AI for Teachers</span>
+              <span class="pd-session-date">Dec 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Palm Springs High School
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">Synergy Gradebook</span>
+              <span class="pd-session-date">Mar 2026</span>
+            </div>
+            <div class="pd-session">
+              <span class="pd-session-name">Outlook</span>
+              <span class="pd-session-date">Oct 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Desert Hot Springs High School
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">Synergy</span>
+              <span class="pd-session-date">Oct 2024</span>
+            </div>
+            <div class="pd-session">
+              <span class="pd-session-name">ParentSquare &amp; AI for Teachers</span>
+              <span class="pd-session-date">Aug 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Mt. San Jacinto High School
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">ParentSquare</span>
+              <span class="pd-session-date">Oct 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Desert Learning Academy
+            <span class="pd-school-tag hs">HS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">Looker Studio</span>
+              <span class="pd-session-date">Jan 2025</span>
+            </div>
+            <div class="pd-session">
+              <span class="pd-session-name">Engaging Blended Learning</span>
+              <span class="pd-session-date">Jan 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Raymond Cree Middle School
+            <span class="pd-school-tag ms">MS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">Curipod</span>
+              <span class="pd-session-date">Dec 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            James Workman Middle School
+            <span class="pd-school-tag ms">MS</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">Intro to Google Videos</span>
+              <span class="pd-session-date">Oct 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            Edward Wenzlaff Ed. Center
+            <span class="pd-school-tag hs">ALT</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">ParentSquare</span>
+              <span class="pd-session-date">Nov 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-card fade">
+          <div class="pd-school">
+            CTE — District-Wide
+            <span class="pd-school-tag dist">DIST</span>
+          </div>
+          <div class="pd-sessions">
+            <div class="pd-session">
+              <span class="pd-session-name">AI Professional Development Resource Library</span>
+              <span class="pd-session-date">Oct 2025</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pd-grid -->
+
+      <p style="font-size:0.82rem; color:var(--text-3); font-family:var(--font-mono); margin-top:8px;">
+        // PD sessions delivered across PSUSD secondary sites, 2024–2026
+      </p>
+
+    </div><!-- /tab-pd -->
+
     <div class="philosophy-block fade">
       <blockquote>
         "I teach math because it's one of the most hated subjects in the world — and it doesn't have to be.
@@ -722,7 +976,7 @@
         a test score. It's the moment a student who told themselves they can't do math starts asking
         better questions."
       </blockquote>
-      <cite>— Mario Mendez, Mathematics Teacher</cite>
+      <cite>Mario Mendez, Mathematics Teacher</cite>
     </div>
 
   </div><!-- /wrap -->
